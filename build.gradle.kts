@@ -1,7 +1,7 @@
 val tgBotVersion = "6.2.0"
 val exposedVersion = "0.40.1"
 val ktorVersion = "2.3.12"
-val libraryVersion = "1.0"
+val libraryVersion = "1.1"
 
 plugins {
     kotlin("jvm") version "1.9.25"
@@ -75,7 +75,7 @@ publishing {
             from(components["java"])
 
             groupId = "com.github.olejajew"
-            artifactId = "project_shared"
+            artifactId = "utilslib"
             version = libraryVersion
         }
     }
