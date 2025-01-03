@@ -2,6 +2,7 @@ package com.example.lib.bot
 
 import com.github.kotlintelegrambot.Bot
 import com.github.kotlintelegrambot.entities.ChatId
+import com.github.kotlintelegrambot.entities.Message
 import com.github.kotlintelegrambot.entities.ParseMode
 import com.github.kotlintelegrambot.entities.Update
 
@@ -27,4 +28,13 @@ interface IBot {
             onResult(it)
         }
     }
+
+    fun request(requestMessage: Message, onUpdate: (Update) -> Unit) {
+        getAskReplyWorker().saveRequest(
+            requestMessage.chat.id,
+            requestMessage.messageId,
+            onUpdate
+        )
+    }
+
 }
