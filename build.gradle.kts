@@ -1,7 +1,7 @@
 val tgBotVersion = "6.2.0"
 val exposedVersion = "0.40.1"
 val ktorVersion = "2.3.12"
-val libraryVersion = "1.1"
+val libraryVersion = "1.2"
 
 plugins {
     kotlin("jvm") version "1.9.25"
@@ -82,7 +82,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/olejajew/project_shared")
+            url = uri("https://maven.pkg.github.com/olejajew/utilslib")
             credentials {
                 username = gitHubUser
                 password = gitHubToken
