@@ -37,4 +37,11 @@ interface IBot {
         )
     }
 
+    fun listenAll(chatId: Long, onUpdate: (Update) -> Unit) {
+        getAskReplyWorker().listenAll(
+            chatId,
+            onUpdate
+        )
+    }
+
 }
