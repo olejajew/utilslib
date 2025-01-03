@@ -1,7 +1,7 @@
 val tgBotVersion = "6.2.0"
 val exposedVersion = "0.40.1"
 val ktorVersion = "2.3.12"
-val libraryVersion = "1.4"
+val libraryVersion = "1.5"
 
 plugins {
     kotlin("jvm") version "1.9.25"

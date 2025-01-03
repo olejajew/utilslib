@@ -10,7 +10,7 @@ class AskReplyWorker(private val count: Int = 20) {
 
     fun proceedIfCan(update: Update): Boolean {
         val chatId = update.chatId() ?: return false
-        listenAll[chatId]?.let {
+        listenAll.remove(chatId)?.let {
             it.onResult(update)
             return true
         }
@@ -18,7 +18,7 @@ class AskReplyWorker(private val count: Int = 20) {
         val replyMessageId =
             update.message?.replyToMessage?.messageId ?: update.callbackQuery?.message?.messageId ?: return false
         val id = generateId(chatId, replyMessageId)
-        val action = container[id] ?: return false
+        val action = container.remove(id) ?: return false
         action.onResult(update)
         return true
     }
